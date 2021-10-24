@@ -1,7 +1,12 @@
 import cls from "./MyPosts.module.css"
 import Post from "./Post/Post";
 
-const MyPosts = () => {
+const MyPosts = (props) => {
+
+
+
+  let postsElements = props.posts.map( p => <Post message={p.message} likesCount={p.likesCount}/>);
+
   return (
       <div>
         My Posts
@@ -10,10 +15,7 @@ const MyPosts = () => {
           <button>Add Post</button>
         </div>
         <div className={cls.posts}>
-          <Post message="Hello !!!" likeCount="19"/>
-          <Post message="Hii" likeCount="14"/>
-          <Post message="New Car???" likeCount="29"/>
-          <Post message="What's up man" likeCount="39"/>
+          { postsElements}
         </div>
       </div>
   );

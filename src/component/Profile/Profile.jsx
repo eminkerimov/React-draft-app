@@ -1,14 +1,11 @@
 import MyPosts from "./MyPosts/MyPosts";
-import cls from "./Profile.module.css"
+import ProfileInfo from "./ProfileInfo/ProfileInfo";
 
-const Profile = () => {
+const Profile = (props) => {
   return (
     <div>
-      <div>
-        <img className={cls.content_img} src="https://wallpaperfordesktop.com/wp-content/uploads/2021/05/Joker-Wallpaper-Download.jpg" alt="main"/>
-      </div>
-      <div>Ava + desc</div>
-      <MyPosts/>
+      <ProfileInfo/>
+      <MyPosts posts={props.state.posts}/>
     </div>
   );
 };
